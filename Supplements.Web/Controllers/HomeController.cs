@@ -8,7 +8,7 @@ using Supplements.Model;
 using Supplements.ServiceAPI.Models.EF;
 using Supplements.Web.Models;
 
-namespace Supplements.Web.Controllers
+namespace Supplements.Web.Controllers   
 {
     public class HomeController : Controller
     {
