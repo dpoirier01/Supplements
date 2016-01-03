@@ -1,0 +1,11 @@
+c:\users\david\documents\visual studio 2015\Projects\Supplements\Supplements.Business\bin\Debug\Supplements.Business.dll
+c:\users\david\documents\visual studio 2015\Projects\Supplements\Supplements.Business\bin\Debug\Supplements.Business.pdb
+c:\users\david\documents\visual studio 2015\Projects\Supplements\Supplements.Business\obj\Debug\Supplements.Business.csprojResolveAssemblyReference.cache
+c:\users\david\documents\visual studio 2015\Projects\Supplements\Supplements.Business\obj\Debug\Supplements.Business.dll
+c:\users\david\documents\visual studio 2015\Projects\Supplements\Supplements.Business\obj\Debug\Supplements.Business.pdb
+c:\users\david\documents\visual studio 2015\Projects\Supplements\Supplements.Business\bin\Debug\Supplements.Model.dll
+c:\users\david\documents\visual studio 2015\Projects\Supplements\Supplements.Business\bin\Debug\System.Net.Http.Formatting.dll
+c:\users\david\documents\visual studio 2015\Projects\Supplements\Supplements.Business\bin\Debug\Supplements.Model.pdb
+C:\Users\David\Documents\Visual Studio 2015\Projects\Supplements\Supplements.Business\bin\Debug\Supplements.Business.dll.config
+C:\Users\David\Documents\Visual Studio 2015\Projects\Supplements\Supplements.Business\bin\Debug\Newtonsoft.Json.dll
+C:\Users\David\Documents\Visual Studio 2015\Projects\Supplements\Supplements.Business\bin\Debug\Newtonsoft.Json.xml

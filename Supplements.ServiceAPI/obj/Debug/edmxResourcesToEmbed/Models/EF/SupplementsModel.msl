@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SupplementContextModelStoreContainer" CdmEntityContainer="SupplementContextEntities">
+    <EntitySetMapping Name="DoseResultDescriptions">
+      <EntityTypeMapping TypeName="SupplementContextModel.DoseResultDescription">
+        <MappingFragment StoreEntitySet="DoseResultDescription">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DosesID" ColumnName="DosesID" />
+          <ScalarProperty Name="DescriptionID" ColumnName="DescriptionID" />
+          <ScalarProperty Name="DescriptionsEntity_ID" ColumnName="DescriptionsEntity_ID" />
+          <ScalarProperty Name="Doses_ID" ColumnName="Doses_ID" />
+          <ScalarProperty Name="DosesEntity_ID" ColumnName="DosesEntity_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doses">
+      <EntityTypeMapping TypeName="SupplementContextModel.Dos">
+        <MappingFragment StoreEntitySet="Doses">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SupplementTypeID" ColumnName="SupplementTypeID" />
+          <ScalarProperty Name="MorningQuantity" ColumnName="MorningQuantity" />
+          <ScalarProperty Name="AfternoonQuantity" ColumnName="AfternoonQuantity" />
+          <ScalarProperty Name="EveningQuantity" ColumnName="EveningQuantity" />
+          <ScalarProperty Name="MorningWeight" ColumnName="MorningWeight" />
+          <ScalarProperty Name="AfternoonWeight" ColumnName="AfternoonWeight" />
+          <ScalarProperty Name="EveningWeight" ColumnName="EveningWeight" />
+          <ScalarProperty Name="Morning" ColumnName="Morning" />
+          <ScalarProperty Name="Afternoon" ColumnName="Afternoon" />
+          <ScalarProperty Name="Evening" ColumnName="Evening" />
+          <ScalarProperty Name="FrequencyByWeek" ColumnName="FrequencyByWeek" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="DoseResultDescription_ID" ColumnName="DoseResultDescription_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResultDescriptions">
+      <EntityTypeMapping TypeName="SupplementContextModel.ResultDescription">
+        <MappingFragment StoreEntitySet="ResultDescription">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DoseResultDescription_ID" ColumnName="DoseResultDescription_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplementTypes">
+      <EntityTypeMapping TypeName="SupplementContextModel.SupplementType">
+        <MappingFragment StoreEntitySet="SupplementType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Distributer" ColumnName="Distributer" />
+          <ScalarProperty Name="ThirdPartyTesting" ColumnName="ThirdPartyTesting" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

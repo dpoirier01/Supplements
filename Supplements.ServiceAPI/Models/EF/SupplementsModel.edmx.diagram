@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4d8cd02ec2b24f689bdee5ff1d947e2d" Name="Diagram1">
+        <EntityTypeShape EntityType="SupplementContextModel.DoseResultDescription" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupplementContextModel.Dos" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupplementContextModel.ResultDescription" Width="1.5" PointX="7.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupplementContextModel.SupplementType" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <AssociationConnector Association="SupplementContextModel.FK_dbo_DoseResultDescription_dbo_Doses_Doses_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="SupplementContextModel.FK_dbo_DoseResultDescription_dbo_Doses_DosesEntity_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="SupplementContextModel.FK_dbo_DoseResultDescription_dbo_ResultDescription_DescriptionsEntity_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="SupplementContextModel.FK_dbo_Doses_dbo_DoseResultDescription_DoseResultDescription_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="SupplementContextModel.FK_dbo_ResultDescription_dbo_DoseResultDescription_DoseResultDescription_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="SupplementContextModel.FK_dbo_Doses_dbo_SupplementType_SupplementTypeID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

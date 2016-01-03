@@ -1,0 +1,5 @@
+c:\users\david\documents\visual studio 2015\Projects\Supplements\Supplements.Model\bin\Debug\Supplements.Model.dll
+c:\users\david\documents\visual studio 2015\Projects\Supplements\Supplements.Model\bin\Debug\Supplements.Model.pdb
+c:\users\david\documents\visual studio 2015\Projects\Supplements\Supplements.Model\obj\Debug\Supplements.Model.csprojResolveAssemblyReference.cache
+c:\users\david\documents\visual studio 2015\Projects\Supplements\Supplements.Model\obj\Debug\Supplements.Model.dll
+c:\users\david\documents\visual studio 2015\Projects\Supplements\Supplements.Model\obj\Debug\Supplements.Model.pdb

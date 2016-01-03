@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SupplementContextModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DoseResultDescription">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DosesID" Type="Int32" Nullable="false" />
+    <Property Name="DescriptionID" Type="Int32" Nullable="false" />
+    <Property Name="DescriptionsEntity_ID" Type="Int32" />
+    <Property Name="Doses_ID" Type="Int32" />
+    <Property Name="DosesEntity_ID" Type="Int32" />
+    <NavigationProperty Name="Dos" Relationship="Self.FK_dbo_DoseResultDescription_dbo_Doses_Doses_ID" FromRole="DoseResultDescription" ToRole="Doses" />
+    <NavigationProperty Name="Dos1" Relationship="Self.FK_dbo_DoseResultDescription_dbo_Doses_DosesEntity_ID" FromRole="DoseResultDescription" ToRole="Doses" />
+    <NavigationProperty Name="ResultDescription" Relationship="Self.FK_dbo_DoseResultDescription_dbo_ResultDescription_DescriptionsEntity_ID" FromRole="DoseResultDescription" ToRole="ResultDescription" />
+    <NavigationProperty Name="Doses" Relationship="Self.FK_dbo_Doses_dbo_DoseResultDescription_DoseResultDescription_ID" FromRole="DoseResultDescription" ToRole="Doses" />
+    <NavigationProperty Name="ResultDescriptions" Relationship="Self.FK_dbo_ResultDescription_dbo_DoseResultDescription_DoseResultDescription_ID" FromRole="DoseResultDescription" ToRole="ResultDescription" />
+  </EntityType>
+  <EntityType Name="Dos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SupplementTypeID" Type="Int32" Nullable="false" />
+    <Property Name="MorningQuantity" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AfternoonQuantity" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EveningQuantity" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="MorningWeight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AfternoonWeight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EveningWeight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Morning" Type="Boolean" Nullable="false" />
+    <Property Name="Afternoon" Type="Boolean" Nullable="false" />
+    <Property Name="Evening" Type="Boolean" Nullable="false" />
+    <Property Name="FrequencyByWeek" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DoseResultDescription_ID" Type="Int32" />
+    <NavigationProperty Name="DoseResultDescriptions" Relationship="Self.FK_dbo_DoseResultDescription_dbo_Doses_Doses_ID" FromRole="Doses" ToRole="DoseResultDescription" />
+    <NavigationProperty Name="DoseResultDescriptions1" Relationship="Self.FK_dbo_DoseResultDescription_dbo_Doses_DosesEntity_ID" FromRole="Doses" ToRole="DoseResultDescription" />
+    <NavigationProperty Name="DoseResultDescription" Relationship="Self.FK_dbo_Doses_dbo_DoseResultDescription_DoseResultDescription_ID" FromRole="Doses" ToRole="DoseResultDescription" />
+    <NavigationProperty Name="SupplementType" Relationship="Self.FK_dbo_Doses_dbo_SupplementType_SupplementTypeID" FromRole="Doses" ToRole="SupplementType" />
+  </EntityType>
+  <EntityType Name="ResultDescription">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DoseResultDescription_ID" Type="Int32" />
+    <NavigationProperty Name="DoseResultDescriptions" Relationship="Self.FK_dbo_DoseResultDescription_dbo_ResultDescription_DescriptionsEntity_ID" FromRole="ResultDescription" ToRole="DoseResultDescription" />
+    <NavigationProperty Name="DoseResultDescription" Relationship="Self.FK_dbo_ResultDescription_dbo_DoseResultDescription_DoseResultDescription_ID" FromRole="ResultDescription" ToRole="DoseResultDescription" />
+  </EntityType>
+  <EntityType Name="SupplementType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Distributer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ThirdPartyTesting" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Doses" Relationship="Self.FK_dbo_Doses_dbo_SupplementType_SupplementTypeID" FromRole="SupplementType" ToRole="Doses" />
+  </EntityType>
+  <Association Name="FK_dbo_DoseResultDescription_dbo_Doses_Doses_ID">
+    <End Role="Doses" Type="Self.Dos" Multiplicity="0..1" />
+    <End Role="DoseResultDescription" Type="Self.DoseResultDescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doses">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DoseResultDescription">
+        <PropertyRef Name="Doses_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_DoseResultDescription_dbo_Doses_DosesEntity_ID">
+    <End Role="Doses" Type="Self.Dos" Multiplicity="0..1" />
+    <End Role="DoseResultDescription" Type="Self.DoseResultDescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doses">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DoseResultDescription">
+        <PropertyRef Name="DosesEntity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_DoseResultDescription_dbo_ResultDescription_DescriptionsEntity_ID">
+    <End Role="ResultDescription" Type="Self.ResultDescription" Multiplicity="0..1" />
+    <End Role="DoseResultDescription" Type="Self.DoseResultDescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResultDescription">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DoseResultDescription">
+        <PropertyRef Name="DescriptionsEntity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Doses_dbo_DoseResultDescription_DoseResultDescription_ID">
+    <End Role="DoseResultDescription" Type="Self.DoseResultDescription" Multiplicity="0..1" />
+    <End Role="Doses" Type="Self.Dos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DoseResultDescription">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Doses">
+        <PropertyRef Name="DoseResultDescription_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ResultDescription_dbo_DoseResultDescription_DoseResultDescription_ID">
+    <End Role="DoseResultDescription" Type="Self.DoseResultDescription" Multiplicity="0..1" />
+    <End Role="ResultDescription" Type="Self.ResultDescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DoseResultDescription">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ResultDescription">
+        <PropertyRef Name="DoseResultDescription_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Doses_dbo_SupplementType_SupplementTypeID">
+    <End Role="SupplementType" Type="Self.SupplementType" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Doses" Type="Self.Dos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SupplementType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Doses">
+        <PropertyRef Name="SupplementTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SupplementContextEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DoseResultDescriptions" EntityType="Self.DoseResultDescription" />
+    <EntitySet Name="Doses" EntityType="Self.Dos" />
+    <EntitySet Name="ResultDescriptions" EntityType="Self.ResultDescription" />
+    <EntitySet Name="SupplementTypes" EntityType="Self.SupplementType" />
+    <AssociationSet Name="FK_dbo_DoseResultDescription_dbo_Doses_Doses_ID" Association="Self.FK_dbo_DoseResultDescription_dbo_Doses_Doses_ID">
+      <End Role="Doses" EntitySet="Doses" />
+      <End Role="DoseResultDescription" EntitySet="DoseResultDescriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_DoseResultDescription_dbo_Doses_DosesEntity_ID" Association="Self.FK_dbo_DoseResultDescription_dbo_Doses_DosesEntity_ID">
+      <End Role="Doses" EntitySet="Doses" />
+      <End Role="DoseResultDescription" EntitySet="DoseResultDescriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_DoseResultDescription_dbo_ResultDescription_DescriptionsEntity_ID" Association="Self.FK_dbo_DoseResultDescription_dbo_ResultDescription_DescriptionsEntity_ID">
+      <End Role="ResultDescription" EntitySet="ResultDescriptions" />
+      <End Role="DoseResultDescription" EntitySet="DoseResultDescriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Doses_dbo_DoseResultDescription_DoseResultDescription_ID" Association="Self.FK_dbo_Doses_dbo_DoseResultDescription_DoseResultDescription_ID">
+      <End Role="DoseResultDescription" EntitySet="DoseResultDescriptions" />
+      <End Role="Doses" EntitySet="Doses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ResultDescription_dbo_DoseResultDescription_DoseResultDescription_ID" Association="Self.FK_dbo_ResultDescription_dbo_DoseResultDescription_DoseResultDescription_ID">
+      <End Role="DoseResultDescription" EntitySet="DoseResultDescriptions" />
+      <End Role="ResultDescription" EntitySet="ResultDescriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Doses_dbo_SupplementType_SupplementTypeID" Association="Self.FK_dbo_Doses_dbo_SupplementType_SupplementTypeID">
+      <End Role="SupplementType" EntitySet="SupplementTypes" />
+      <End Role="Doses" EntitySet="Doses" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
