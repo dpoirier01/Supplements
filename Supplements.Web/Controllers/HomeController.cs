@@ -15,7 +15,7 @@ namespace Supplements.Web.Controllers
 
         SupplementsService _service = new SupplementsService();
 
-        public ActionResult Index()
+        public ActionResult Index()   
         {
             var supplements = (from supps in _service.GetSupplements()
                                select new Model.SupplementType()
